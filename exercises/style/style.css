@@ -7,7 +7,65 @@ body {
     text-decoration: none;
 }
 
+header {
+    min-height: 350px;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/exercises/assets/banner.jpeg);
+    background-size: cover;
+    position: relative;
+}
 
+header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    background-image: url(/exercises/assets/profileD.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.profile-name {
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.subtext {
+    margin-top: 8px;
+    z-index: 1;
+}
+
+.main {
+    background-color: yellow;
+    height: 100px;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container{
+    max-width: 750px;
+    min-width: 600px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
 
 footer {
     min-height: 100px;
