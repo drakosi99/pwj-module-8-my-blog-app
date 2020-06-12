@@ -9,15 +9,17 @@ body {
 
 header {
     min-height: 350px;
-    background-color: blue;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(/exercises/assets/banner.jpeg);
     background-size: cover;
     position: relative;
+}
+
+.home-page header {
+    background-image: url(/exercises/assets/banner.jpeg);
 }
 
 header::before {
@@ -47,7 +49,7 @@ header::before {
     transition: all 0.2s ease;
 }
 
-.add-post a{
+.add-post a {
     color: white;
     text-decoration: none;
     font-size: 220%;
@@ -145,6 +147,10 @@ header::before {
     line-height: 1.4;
     max-height: 70px;
     overflow: hidden;
+}
+
+a.post-link {
+    text-decoration: none;
 }
 
 footer {

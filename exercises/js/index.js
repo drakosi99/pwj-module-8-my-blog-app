@@ -15,7 +15,7 @@ const getPosts = () => {
     }).then((data) => {
         buildPosts(data)
     })
-}
+}   
 
 const buildPosts = (blogPosts) => {
     console.log(blogPosts)
@@ -25,17 +25,20 @@ const buildPosts = (blogPosts) => {
     blogPosts.map((post) => {
         const postDate = new Date(parseInt(post.added_date)).toDateString()
         const postImage = `${API_BASE_URL}${post.post_image}`
+        const postLink = `/exercises/post.html?id=${post.id}`
         blogPostContent += `
-        <div class="post">
-            <div class="post-image" style="background-image: url(${postImage})"></div>
-            <div class="post-content">
-                <div class="post-date">${postDate}</div>
-                <div class="post-title">
-                    <h4>${post.title}</h4>
+        <a class="post-link" href="${postLink}">
+            <div class="post">
+                <div class="post-image" style="background-image: url(${postImage})"></div>
+                <div class="post-content">
+                    <div class="post-date">${postDate}</div>
+                    <div class="post-title">
+                        <h4>${post.title}</h4>
+                    </div>
+                    <div class="post-text">${post.content}</div>
                 </div>
-                <div class="post-text">${post.content}</div>
             </div>
-        </div>
+        </a>
         `
     })
     document.querySelector('.blog-posts-container').innerHTML = blogPostContent
